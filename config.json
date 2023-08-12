@@ -1,10 +1,10 @@
 {
-  "bioUrl": "https://raw.githubusercontent.com/m4tt72/m4tt72/master/README.md",
+  "bioUrl": "https://raw.githubusercontent.com/ppiotrlach/ppiotrlach/main/README.md",
   "social": {
-    "instagram": "m4tt72",
-    "github": "m4tt72",
-    "linkedin": "yassinefathi"
+    "instagram": "-",
+    "github": "ppiotrlach",
+    "linkedin": "piotr-lach1"
   },
-  "theme": "gruvboxdark",
-  "border": true
+  "theme": "aci",
+  "border": false
 }
