@@ -19,12 +19,6 @@ export const date = async (args: string[]): Promise<string> => {
   return new Date().toString();
 };
 
-export const gui = async (args: string[]): Promise<string> => {
-  window.open('https://m4tt72.com', '_self');
-
-  return 'Opening GUI version...';
-};
-
 export const email = async (args: string[]): Promise<string> => {
   window.open('mailto:hi@nm4tt72.com');
 
@@ -44,14 +38,11 @@ export const emacs = async (args?: string[]): Promise<string> => {
 };
 
 export const sudo = async (args?: string[]): Promise<string> => {
-  setTimeout(function () {
-    window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
-  }, 1000);
 
   return `Permission denied: unable to run the command '${args[0]}' as root.`;
 };
 
-export const repo = async (args?: string[]): Promise<string> => {
+export const credit = async (args?: string[]): Promise<string> => {
   setTimeout(function () {
     window.open('https://github.com/m4tt72/terminal', '_blank');
   }, 1000);
@@ -59,28 +50,64 @@ export const repo = async (args?: string[]): Promise<string> => {
   return 'Opening repository...';
 };
 
-export const donate = async (args?: string[]): Promise<string> => {
-  window.open(packageJson.funding.url, '_blank');
 
-  return 'Opening donation url...';
+export const cats = async (args?: string[]): Promise<string> => {
+  setTimeout(function () {
+    window.open('https://www.youtube.com/watch?v=KBdxQyPWgg0&ab_channel=775Live');
+  }, 1000);
+
+  return 'kitties are cool...';
+};
+
+export const zen = async (args?: string[]): Promise<string> => {
+  // add chill music here
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen();
+
+    return 'are you sure it is not a dream... wakeup';
+  }
+  else {
+    return 'inception'
+  }
+};
+
+export const wakeup = async (args?: string[]): Promise<string> => {
+  if (document.fullscreenElement) {
+    document.exitFullscreen();
+    return 'it is good to see you back';
+  }
+  else {
+    return 'if you want to wake up try to fall asleep first (zen)'
+  }
+};
+
+export const education = async (args?: string[]): Promise<string> => {
+  return 'Computer Engineering | Wroclaw University of Science and Technology | 2019 ~ 2023';
+};
+export const experience = async (args?: string[]): Promise<string> => {
+  const exp =
+    `Junior Cloud Platform Engineer | ZF Group              | May 2023 - Present
+Dev Engineer                   | Santander Bank Polska | Jul 2020 - May 2023`;
+
+  return exp
 };
 
 export const banner = (args?: string[]): string => {
   return `
-███╗   ███╗██╗  ██╗████████╗████████╗███████╗██████╗
-████╗ ████║██║  ██║╚══██╔══╝╚══██╔══╝╚════██║╚════██╗
-██╔████╔██║███████║   ██║      ██║       ██╔╝ █████╔╝
-██║╚██╔╝██║╚════██║   ██║      ██║      ██╔╝ ██╔═══╝
-██║ ╚═╝ ██║     ██║   ██║      ██║      ██║  ███████╗
-╚═╝     ╚═╝     ╚═╝   ╚═╝      ╚═╝      ╚═╝  ╚══════╝ v${packageJson.version}
-
-Type 'help' to see list of available commands.
-
+            
+  ██▓███   ██▓ ▒█████  ▄▄▄█████▓ ██▀███   ██▓    ▄▄▄       ▄████▄   ██░ ██ 
+  ▓██░  ██▒▓██▒▒██▒  ██▒▓  ██▒ ▓▒▓██ ▒ ██▒▓██▒   ▒████▄    ▒██▀ ▀█  ▓██░ ██▒
+  ▓██░ ██▓▒▒██▒▒██░  ██▒▒ ▓██░ ▒░▓██ ░▄█ ▒▒██░   ▒██  ▀█▄  ▒▓█    ▄ ▒██▀▀██░
+  ▒██▄█▓▒ ▒░██░▒██   ██░░ ▓██▓ ░ ▒██▀▀█▄  ▒██░   ░██▄▄▄▄██ ▒▓▓▄ ▄██▒░▓█ ░██ 
+  ▒██▒ ░  ░░██░░ ████▓▒░  ▒██▒ ░ ░██▓ ▒██▒░██████▒▓█   ▓██▒▒ ▓███▀ ░░▓█▒░██▓
+  ▒▓▒░ ░  ░░▓  ░ ▒░▒░▒░   ▒ ░░   ░ ▒▓ ░▒▓░░ ▒░▓  ░▒▒   ▓▒█░░ ░▒ ▒  ░ ▒ ░░▒░▒
+  ░▒ ░      ▒ ░  ░ ▒ ▒░     ░      ░▒ ░ ▒░░ ░ ▒  ░ ▒   ▒▒ ░  ░  ▒    ▒ ░▒░ ░
+  ░░        ▒ ░░ ░ ░ ▒    ░        ░░   ░   ░ ░    ░   ▒   ░         ░  ░░ ░
+            ░      ░ ░              ░         ░  ░     ░  ░░ ░       ░  ░  ░
+                                                                      v${packageJson.version}⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 --
-The project is open-source 🎉 type 'repo' to check out the repository.
-
-New 🎉: Try out the new 'theme' command. See all available themes <a href="https://github.com/m4tt72/terminal/tree/master/docs/themes">in the docs</a>.
-New 🎉: New command 'neofetch', for you linux.
+Piotr Lach interactive cv
+Start with 'help'
 --
 `;
 };
