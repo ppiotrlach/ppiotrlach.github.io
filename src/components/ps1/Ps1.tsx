@@ -15,7 +15,7 @@ export const Ps1 = () => {
     <div>
       <span
         style={{
-          color: theme.yellow,
+          color: theme.brightPurple,
         }}
       >
         guest
@@ -34,6 +34,23 @@ export const Ps1 = () => {
       >
         {hostname}
       </span>
+
+      {/* <span
+        style={{
+          color: theme.white,
+        }}
+      >
+        in
+      </span> */}
+
+      {/* <span
+        style={{
+          color: theme.brightPurple,
+        }}
+      >
+        ~/projects/react/terminal
+      </span> */}
+
       <span
         style={{
           color: theme.white,
