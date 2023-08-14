@@ -4,7 +4,7 @@ import { useTheme } from '../../utils/themeProvider';
 export const Ps1 = () => {
   const [userType, setUserType] = useState('dreamer');
   const { theme } = useTheme();
-  const where = " in "
+  const where = ' in ';
 
   return (
     <div>

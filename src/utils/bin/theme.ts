@@ -5,8 +5,8 @@ export const theme = async (
   callback?: (value: string) => string,
 ): Promise<string> => {
   if (args.length === 0) {
-    return
-    `NAME
+    const message =
+      `NAME
         theme - change your outlook
 SYNOPSIS
         theme [option] [...]
@@ -24,18 +24,18 @@ OPTIONS:
 
 EXAMPLES 
         theme set adventuretime
-          set current theme to adventuretime (my favourite)
+            set current theme to adventuretime (my favourite, default one here)
         theme ls
+            list all themes
         theme random
-          set current theme to random theme
-  `;
+            set current theme to random theme`
+    return message;
   }
 
   switch (args[0]) {
     case 'ls':
-      let result = Themes.map((theme) => theme.name.toLowerCase()).join(', ');
+      let result = Themes.map((theme) => theme.name.toLowerCase()).join(' | ');
       result += '\n\n';
-      result += `You can preview all these themes <a href="https://github.com/m4tt72/terminal/tree/master/docs/themes">in the docs</a>`;
 
       return result;
     case 'set':

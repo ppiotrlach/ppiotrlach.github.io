@@ -2,9 +2,11 @@ import packageJson from '../../../package.json';
 import * as bin from './index';
 
 export const help = async (args: string[]): Promise<string> => {
-  const commands = Object.keys(bin).sort().join(', ');
+  const commands = Object.keys(bin).sort().join(' \n\t ');
 
-  return `Available commands:\n${commands}\n\n[tab]\t trigger completion.\n[ctrl+l] clear terminal.\n[ctrl+c] cancel command.`;
+
+
+  return `AVAILABLE COMMANDS\n\t ${commands}\n\n[tab]\t\n    trigger completion\n[ctrl l]\n    clear terminal\n[ctrl c]\n    cancel command.`;
 };
 
 export const echo = async (args: string[]): Promise<string> => {
@@ -26,7 +28,6 @@ export const email = async (args: string[]): Promise<string> => {
 };
 
 export const sudo = async (args?: string[]): Promise<string> => {
-
   return `Error: insufficient permissions to run command '${args[0]}' as god.`;
 };
 
@@ -67,8 +68,7 @@ export const zen = async (args?: string[]): Promise<string> => {
     document.documentElement.requestFullscreen();
 
     return 'are you sure it is not a dream... wakeup';
-  }
-  else {
+  } else {
     return 'inception';
   }
 };
@@ -84,8 +84,7 @@ export const wakeup = async (args?: string[]): Promise<string> => {
     }
 
     return 'it is good to see you back';
-  }
-  else {
+  } else {
     return 'if you want to wake up try to fall asleep first (zen)';
   }
 };
@@ -94,11 +93,10 @@ export const education = async (args?: string[]): Promise<string> => {
   return 'Computer Engineering | Wroclaw University of Science and Technology | 2019 ~ 2023';
 };
 export const experience = async (args?: string[]): Promise<string> => {
-  const exp =
-    `Junior Cloud Platform Engineer | ZF Group              | May 2023 - Present
+  const exp = `Junior Cloud Platform Engineer | ZF Group              | May 2023 - Present
 Dev Engineer                   | Santander Bank Polska | Jul 2020 - May 2023`;
 
-  return exp
+  return exp;
 };
 
 export const banner = (args?: string[]): string => {
@@ -144,11 +142,11 @@ export const banner = (args?: string[]): string => {
   const textLines = text.split('\n');
   const artLines = art.split('\n');
 
-  let result = "\n";
+  let result = '\n';
 
   for (let i = 0; i < Math.max(textLines.length, artLines.length); i++) {
-    const textLine = textLines[i] || "";
-    const artLine = artLines[i] || "";
+    const textLine = textLines[i] || '';
+    const artLine = artLines[i] || '';
     result += `${textLine.padEnd(90)} ${artLine}\n`; // 80 is the width of the text
   }
 

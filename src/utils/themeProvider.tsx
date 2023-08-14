@@ -31,7 +31,7 @@ export const ThemeProvider: React.FC<Props> = ({ children }) => {
     );
 
     if (index === -1) {
-      return `Theme '${name}' not found.\TRY\n    'theme ls' \n        check available themes.`;
+      return `Theme '${name}' not found.\nTRY\n    'theme ls' \n        check available themes`;
     }
 
     _setTheme(Themes[index]);
