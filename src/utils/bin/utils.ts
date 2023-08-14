@@ -20,9 +20,9 @@ export const date = async (args: string[]): Promise<string> => {
 };
 
 export const email = async (args: string[]): Promise<string> => {
-  window.open('mailto:hi@nm4tt72.com');
+  window.open('mailto:piotr.lach99999@gmail.com"');
 
-  return 'Opening mailto:hi@m4tt72.com...';
+  return 'Opening mailto:piotr.lach99999@gmail.com"';
 };
 
 export const vi = async (args: string[]): Promise<string> => {
@@ -47,7 +47,7 @@ export const credit = async (args?: string[]): Promise<string> => {
     window.open('https://github.com/m4tt72/terminal', '_blank');
   }, 1000);
 
-  return 'Opening repository...';
+  return 'Opening repository of base project (m4tt72)...';
 };
 
 
@@ -59,25 +59,37 @@ export const cats = async (args?: string[]): Promise<string> => {
   return 'kitties are cool...';
 };
 
+// Declare a variable to hold the music object outside of the functions
+let music: HTMLAudioElement | null = null;
+
 export const zen = async (args?: string[]): Promise<string> => {
-  // add chill music here
   if (!document.fullscreenElement) {
+    music = new Audio('/relax.mp3');
+    music.volume = 0.15;
+    music.play();
     document.documentElement.requestFullscreen();
 
     return 'are you sure it is not a dream... wakeup';
   }
   else {
-    return 'inception'
+    return 'inception';
   }
 };
 
 export const wakeup = async (args?: string[]): Promise<string> => {
   if (document.fullscreenElement) {
     document.exitFullscreen();
+
+    // Stop the music if it's playing
+    if (music) {
+      music.pause();
+      music.currentTime = 0; // Optional: Reset the music to the beginning
+    }
+
     return 'it is good to see you back';
   }
   else {
-    return 'if you want to wake up try to fall asleep first (zen)'
+    return 'if you want to wake up try to fall asleep first (zen)';
   }
 };
 
@@ -93,7 +105,7 @@ Dev Engineer                   | Santander Bank Polska | Jul 2020 - May 2023`;
 };
 
 export const banner = (args?: string[]): string => {
-  return `
+  const text = `
             
   ██▓███   ██▓ ▒█████  ▄▄▄█████▓ ██▀███   ██▓    ▄▄▄       ▄████▄   ██░ ██ 
   ▓██░  ██▒▓██▒▒██▒  ██▒▓  ██▒ ▓▒▓██ ▒ ██▒▓██▒   ▒████▄    ▒██▀ ▀█  ▓██░ ██▒
@@ -104,10 +116,42 @@ export const banner = (args?: string[]): string => {
   ░▒ ░      ▒ ░  ░ ▒ ▒░     ░      ░▒ ░ ▒░░ ░ ▒  ░ ▒   ▒▒ ░  ░  ▒    ▒ ░▒░ ░
   ░░        ▒ ░░ ░ ░ ▒    ░        ░░   ░   ░ ░    ░   ▒   ░         ░  ░░ ░
             ░      ░ ░              ░         ░  ░     ░  ░░ ░       ░  ░  ░
-                                                                      v${packageJson.version}⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
---
-Piotr Lach interactive cv
-Start with 'help'
---
+                                                                       v6.66
+  --
+  Piotr Lach interactive cv
+  I propose you to start with 'zen' to enable full expierience
+  Command 'help' will literally help you :)
+  --
+  `;
+
+  const art = `
+    ⡐⢄⠀⠀⡆⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠏⠉⠀
+    ⠀⠀⢰⢨⡢⠀⣿⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠀⠀⢀
+    ⠀⠀⠀⢏⣷⣄⣿⣿⣿⣿⣿⣿⠟⡿⠟⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣁⣴⣾⠋
+    ⠀⠀⠀⠘⣼⣿⣿⣿⣿⠫⠛⠁⠀⢀⡀⠀⠀⠲⢾⣿⣿⣿⣿⣿⣿⣿⣿⣿⡃⠀
+    ⠀⠀⠀⠀⢱⡿⠛⠉⠁⠀⠀⢀⠔⠁⣈⠁⠂⠀⠲⣿⣿⣿⣿⣿⣿⣿⣿⣧⠞⠀
+    ⠀⠀⠀⠀⠈⢇⠀⠀⠀⠀⠠⠃⡔⢡⢻⣿⡄⠀⠈⠻⣿⠟⡛⡻⣿⣿⣿⢏⡠⠀
+    ⠀⠀⠀⠀⠀⡇⢨⢥⡄⠀⠀⠀⢃⠘⡿⠿⡟⠀⠀⠀⠈⢈⠑⡀⣿⣿⣿⠟⠂⠀
+    ⠀⠀⠀⠀⠀⠐⣬⢨⣿⠀⠀⠀⠀⠀⠈⠈⠀⠀⠀⠀⠀⣘⡠⢃⣿⠟⠁⠀⠀⠀
+    ⠀⠀⠀⠀⠀⠀⠘⡀⢿⠃⠀⠀⠀⠀⠀⠀⠂⠀⠀⠀⢀⢧⣴⠟⠁⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⣔⣮⣷⢖⡇⠀⠀⠀⠀⢀⠎⠘⣇⠠⣤⠄⣪⠤⠀⠀
+    ⠀⠀⠀⠀⠀⠀⠀⠡⢀⠀⠈⠻⡁⠀⡆⠀⠀⢀⣔⠥⣒⡭⠖⢈⣤⢮⠁⠀⠀⠀
+    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠐⠠⢈⠉⠀⣠⡴⢋⣵⠟⢋⣠⣾⣿⣷⣾⣃⡠⠔⠚
+    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⠝⠉⠉⠉⠉⠉⠉⠛⠛⠳⠞⠁⢀⡠⠔
+    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⠟⢻⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣇⠔⠁⠀⢀
+    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠤⢊⣥⣴⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡄⣠⠴⠋
 `;
+
+  const textLines = text.split('\n');
+  const artLines = art.split('\n');
+
+  let result = "\n";
+
+  for (let i = 0; i < Math.max(textLines.length, artLines.length); i++) {
+    const textLine = textLines[i] || "";
+    const artLine = artLines[i] || "";
+    result += `${textLine.padEnd(90)} ${artLine}\n`; // 80 is the width of the text
+  }
+
+  return result;
 };
