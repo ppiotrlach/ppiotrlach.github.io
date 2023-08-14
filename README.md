@@ -3,8 +3,8 @@
 This projects is my terminal resume. I am not power user of react and in general creation of web applications but I hope you enjoy it for at least couple of minutes :D 
 
 ## Credits:
-[M4TT72 | Terminal](https://term.m4tt72.com) - oh boy that's the base, almost all credit
-[music (zen)](https://pixabay.com/music/search/genre/ambient/)
+[M4TT72 | Terminal](https://term.m4tt72.com) - oh boy that's the base, almost all credit <br>
+[music (zen)](https://pixabay.com/music/search/genre/ambient/) <br>
 [ascii art](https://emojicombos.com/)
 
 ## Quick Start
@@ -19,7 +19,7 @@ docker build -t terminal-resume .
 Run container
 
 ```bash
-docker run -p 3000:3000 my-nextjs-app
+docker run -p 3000:3000 terminal-resume
 ```
 
 ### Using npm/yarn
