@@ -12,7 +12,7 @@ export const echo = async (args: string[]): Promise<string> => {
 };
 
 export const whoami = async (args: string[]): Promise<string> => {
-  return 'guest';
+  return 'dreamer';
 };
 
 export const date = async (args: string[]): Promise<string> => {
@@ -25,38 +25,35 @@ export const email = async (args: string[]): Promise<string> => {
   return 'Opening mailto:piotr.lach99999@gmail.com"';
 };
 
-export const vi = async (args: string[]): Promise<string> => {
-  return `why use vi? try 'emacs'.`;
-};
-
-export const vim = async (args: string[]): Promise<string> => {
-  return `why use vim? try 'emacs'.`;
-};
-
-export const emacs = async (args?: string[]): Promise<string> => {
-  return `really? emacs? you should be using 'vim'`;
-};
-
 export const sudo = async (args?: string[]): Promise<string> => {
 
-  return `Permission denied: unable to run the command '${args[0]}' as root.`;
+  return `Error: insufficient permissions to run command '${args[0]}' as god.`;
 };
 
-export const credit = async (args?: string[]): Promise<string> => {
+export const kittens = async (args?: string[]): Promise<string> => {
   setTimeout(function () {
-    window.open('https://github.com/m4tt72/terminal', '_blank');
+    window.open('https://youtu.be/KBdxQyPWgg0?t=3');
   }, 1000);
 
-  return 'Opening repository of base project (m4tt72)...';
-};
+  const kittens = `
 
+          |\___/|     /\___/\
+          )     (     )    ~( .              '
+  .      =\     /=   =\~    /=
+           )===(       ) ~ (       .
+          /     \     /     \
+          |     |     ) ~   (
+         /       \   /     ~ \
+         \       /   \~     ~/
+  jgs_/\_/\__  _/_/\_/\__~__/_/\_/\
+  |  |  |  |( (  |  |  | ))  |  |  |
+  |  |  |  | ) ) |  |  |//|  |  |  |
+  |  |  |  |(_(  |  |  (( |  |  |  |
+  |  |  |  |  |  |  |  |\)|  |  |  | 
+  |  |  |  |  |  |  |  |  |  |  |  |
+  `;
 
-export const cats = async (args?: string[]): Promise<string> => {
-  setTimeout(function () {
-    window.open('https://www.youtube.com/watch?v=KBdxQyPWgg0&ab_channel=775Live');
-  }, 1000);
-
-  return 'kitties are cool...';
+  return kittens;
 };
 
 // Declare a variable to hold the music object outside of the functions
@@ -118,9 +115,11 @@ export const banner = (args?: string[]): string => {
             ░      ░ ░              ░         ░  ░     ░  ░░ ░       ░  ░  ░
                                                                        v6.66
   --
+
   Piotr Lach interactive cv
   I propose you to start with 'zen' to enable full expierience
   Command 'help' will literally help you :)
+
   --
   `;
 

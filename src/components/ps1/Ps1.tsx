@@ -2,14 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useTheme } from '../../utils/themeProvider';
 
 export const Ps1 = () => {
-  const [hostname, setHostname] = useState('');
+  const [userType, setUserType] = useState('dreamer');
   const { theme } = useTheme();
-
-  useEffect(() => {
-    if (typeof window !== undefined) {
-      setHostname(window.location.hostname);
-    }
-  }, []);
+  const where = " in "
 
   return (
     <div>
@@ -18,45 +13,28 @@ export const Ps1 = () => {
           color: theme.brightPurple,
         }}
       >
-        guest
+        {userType}
       </span>
       <span
         style={{
           color: theme.white,
         }}
       >
-        @
+        {where}
       </span>
       <span
         style={{
           color: theme.green,
         }}
       >
-        {hostname}
+        projects/cv
       </span>
-
-      {/* <span
-        style={{
-          color: theme.white,
-        }}
-      >
-        in
-      </span> */}
-
-      {/* <span
-        style={{
-          color: theme.brightPurple,
-        }}
-      >
-        ~/projects/react/terminal
-      </span> */}
-
       <span
         style={{
           color: theme.white,
         }}
       >
-        :$ ~
+        : 👽
       </span>
     </div>
   );

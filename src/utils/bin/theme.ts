@@ -5,15 +5,30 @@ export const theme = async (
   callback?: (value: string) => string,
 ): Promise<string> => {
   if (args.length === 0) {
-    return `Usage: theme [arg]
-Args:
-  - ls: list all themes
-  - set: set a theme
-  - random: set a random theme
+    return
+    `NAME
+        theme - change your outlook
+SYNOPSIS
+        theme [option] [...]
 
-Example: 
-  theme ls # to list all themes
-  theme set Gruvbox # to set a theme`;
+DESCRIPTION
+        Not everyone sees the world the same way, sometimes it's worth trying to change your perspective
+    
+OPTIONS:
+        ls
+            list all themes
+        set <theme>
+            change theme
+        random
+            set a random theme
+
+EXAMPLES 
+        theme set adventuretime
+          set current theme to adventuretime (my favourite)
+        theme ls
+        theme random
+          set current theme to random theme
+  `;
   }
 
   switch (args[0]) {

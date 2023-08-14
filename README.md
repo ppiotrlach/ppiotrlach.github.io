@@ -25,7 +25,7 @@ docker run -d \
   --name terminal \
   -p 3000:3000 \
   -v `pwd`/config.json:/data/config.json \
-  m4tt72/terminal
+  ppiotrlach/terminal
 ```
 
 ### Using npm/yarn

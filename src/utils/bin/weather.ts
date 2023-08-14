@@ -4,7 +4,7 @@ export const weather = async (args: string[]): Promise<string> => {
   const city = args.join('+');
 
   if (!city) {
-    return 'Usage: weather [city]. Example: weather casablanca';
+    return 'USAGE weather [city].\n    e.g: weather wroclaw';
   }
 
   const weather = await getWeather(city);
