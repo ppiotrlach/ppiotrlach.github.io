@@ -1,31 +1,25 @@
-# [M4TT72 | Terminal](https://term.m4tt72.com)
+## Terminal resume
 
-A terminal style website
+This projects is my terminal resume. I am not power user of react and in general creation of web applications but I hope you enjoy it for at least couple of minutes :D 
 
-![screenshot](/docs/screenshot.png)
-
-## why?
-
-TL;DR: why not?
-
-I'm a Linux enthusiast, and I tried creating something that will allow 'normal' people to have a glimpse at my world.
+## Credits:
+[M4TT72 | Terminal](https://term.m4tt72.com) - oh boy that's the base, almost all credit
+[music (zen)](https://pixabay.com/music/search/genre/ambient/)
+[ascii art](https://emojicombos.com/)
 
 ## Quick Start
 
 ### Using docker (recommended)
+Build docker image
 
 ```bash
-docker run -d --name terminal -p 3000:3000 m4tt72/terminal
+docker build -t terminal-resume .
 ```
 
-If you want to run with custom configuration, make sure you have a copy of `config.json` then mount in the container:
+Run container
 
 ```bash
-docker run -d \
-  --name terminal \
-  -p 3000:3000 \
-  -v `pwd`/config.json:/data/config.json \
-  m4tt72/terminal
+docker run -p 3000:3000 my-nextjs-app
 ```
 
 ### Using npm/yarn
@@ -47,36 +41,3 @@ yarn build
 ```bash
 yarn start
 ```
-
-## Configuration
-
-Here's a sample of the `config.json` file:
-
-```json
-{
-  "bioUrl": "https://raw.githubusercontent.com/m4tt72/m4tt72/master/README.md",
-  "social": {
-    "instagram": "m4tt72",
-    "github": "m4tt72",
-    "linkedin": "yassinefathi"
-  },
-  "theme": "gruvboxdark" // list of themes available in themes.json
-}
-```
-
-## Themes
-
-![themes](/docs/screenshot.gif)
-
-[Here's](/docs/themes) a list of available themes.
-
-
-## Contributing
-
-Please feel free to pull requests or log issues.
-
-Thanks!
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=m4tt72/terminal&type=Date)](https://star-history.com/#m4tt72/terminal&Date)

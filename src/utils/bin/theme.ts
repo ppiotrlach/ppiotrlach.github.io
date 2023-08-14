@@ -5,22 +5,37 @@ export const theme = async (
   callback?: (value: string) => string,
 ): Promise<string> => {
   if (args.length === 0) {
-    return `Usage: theme [arg]
-Args:
-  - ls: list all themes
-  - set: set a theme
-  - random: set a random theme
+    const message =
+      `NAME
+        theme - change your outlook
+SYNOPSIS
+        theme [option] [...]
 
-Example: 
-  theme ls # to list all themes
-  theme set Gruvbox # to set a theme`;
+DESCRIPTION
+        Not everyone sees the world the same way, sometimes it's worth trying to change your perspective
+    
+OPTIONS:
+        ls
+            list all themes
+        set <theme>
+            change theme
+        random
+            set a random theme
+
+EXAMPLES 
+        theme set adventuretime
+            set current theme to adventuretime (my favourite, default one here)
+        theme ls
+            list all themes
+        theme random
+            set current theme to random theme`
+    return message;
   }
 
   switch (args[0]) {
     case 'ls':
-      let result = Themes.map((theme) => theme.name.toLowerCase()).join(', ');
+      let result = Themes.map((theme) => theme.name.toLowerCase()).join(' | ');
       result += '\n\n';
-      result += `You can preview all these themes <a href="https://github.com/m4tt72/terminal/tree/master/docs/themes">in the docs</a>`;
 
       return result;
     case 'set':
