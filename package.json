@@ -6,6 +6,7 @@
     "name": "ppiotrlach",
     "email": "piotr.lach99999@gmail.com"
   },
+  "homepage": "https://ppiotrlach.github.io/react-terminal-cv",
   "repository": {
     "type": "git",
     "url": "https://github.com/ppiotrlach/react-terminal-cv"
@@ -19,7 +20,9 @@
     "preexport": "next build",
     "export": "next export",
     "lint": "eslint .",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d .next"
   },
   "dependencies": {
     "@m4tt72/matomo-tracker-react": "^0.6.2",
@@ -42,6 +45,7 @@
     "eslint-plugin-next": "^0.0.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
+    "gh-pages": "^6.0.0",
     "husky": "^8.0.3",
     "postcss": "^8.4.21",
     "prettier": "^2.8.7",
