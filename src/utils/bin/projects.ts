@@ -1,6 +1,8 @@
 import { getProjects } from '../../api';
 
-export const projects = async (args: string[]): Promise<string> => {
+export const projects = async (isPhone: boolean, args: string[]): Promise<string> => {
+  if (isPhone) return 'Normally I would show you list of my projects\nas long as you are on phone just run command [github]'
+
   const projects = await getProjects();
 
   return (

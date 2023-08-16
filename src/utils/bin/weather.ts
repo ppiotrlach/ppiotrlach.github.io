@@ -1,6 +1,9 @@
 import { getWeather } from '../../api';
 
-export const weather = async (args: string[]): Promise<string> => {
+export const weather = async (isPhone: boolean, args: string[]): Promise<string> => {
+  if (isPhone) {
+    return "What do you expect from me???\nJust look through the window"
+  }
   const city = args.join('+');
 
   if (!city) {
