@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { History } from '../interfaces/history';
 import * as bin from './bin';
 import { useTheme } from './themeProvider';
@@ -29,10 +29,23 @@ export const ShellProvider: React.FC<ShellProviderProps> = ({ children }) => {
   const [command, _setCommand] = React.useState<string>('');
   const [lastCommandIndex, _setLastCommandIndex] = React.useState<number>(0);
   const { theme, setTheme } = useTheme();
+  const [isPhone, setIsPhone] = useState(false);
 
   useEffect(() => {
-    setCommand('banner');
+    const handleResize = () => {
+      setIsPhone(window.innerWidth < 480);
+    };
+
+    handleResize(); // Call once to set initial value
+    window.addEventListener('resize', handleResize);
+
+    setCommand('banner'); // Execute the banner command on load
+
+    return () => {
+      window.removeEventListener('resize', handleResize); // Clean up the event listener
+    };
   }, []);
+
 
   useEffect(() => {
     if (!init) {
@@ -89,7 +102,7 @@ export const ShellProvider: React.FC<ShellProviderProps> = ({ children }) => {
           );
         } else {
           try {
-            const output = await bin[cmd](args);
+            const output = await bin[cmd](isPhone, args);
 
             setHistory(output);
           } catch (error) {

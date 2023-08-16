@@ -17,8 +17,15 @@ body,
 body>div:first-child,
 div#__next,
 div#__next>div {
-  height: 100%;
-  overflow: auto;
+  @apply h-full overflow-auto;
+}
+
+/* Example of using Tailwind's responsive utilities */
+@media (max-width: 640px) {
+  body {
+    @apply text-sm;
+    /* Smaller text size on small screens */
+  }
 }
 
 ::-webkit-scrollbar {
@@ -31,5 +38,5 @@ div#__next>div {
 }
 
 a {
-  text-decoration: underline;
+  @apply underline;
 }
